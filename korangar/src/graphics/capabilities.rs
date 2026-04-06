@@ -1,6 +1,6 @@
 #[cfg(feature = "debug")]
 use korangar_debug::logging::{Colorize, print_debug};
-use wgpu::{Adapter, Features, Limits, TextureFormat, TextureFormatFeatureFlags};
+use wgpu::{Adapter, Backend, Features, Limits, TextureFormat, TextureFormatFeatureFlags};
 
 use crate::graphics::{Msaa, RENDER_TO_TEXTURE_DEPTH_FORMAT, RENDER_TO_TEXTURE_FORMAT};
 
@@ -34,6 +34,7 @@ pub struct Capabilities {
 
 impl Capabilities {
     pub fn from_adapter(adapter: &Adapter) -> Self {
+        let adapter_info = adapter.get_info();
         let adapter_features = adapter.features();
         let adapter_limits = adapter.limits();
 
@@ -81,7 +82,8 @@ impl Capabilities {
             Self::check_feature(adapter_features, Features::POLYGON_MODE_LINE);
         }
 
-        if adapter_features
+        if adapter_info.backend != Backend::Metal
+            && adapter_features
             .contains(Features::SAMPLED_TEXTURE_AND_STORAGE_BUFFER_ARRAY_NON_UNIFORM_INDEXING | Features::TEXTURE_BINDING_ARRAY)
             && adapter_limits.max_binding_array_elements_per_shader_stage >= MAX_BINDING_ARRAY_ELEMENTS_PER_SHADER_STAGE
         {
