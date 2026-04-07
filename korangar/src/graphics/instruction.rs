@@ -186,6 +186,7 @@ pub enum RectangleInstruction {
         texture_size: Vector2<f32>,
         linear_filtering: bool,
         texture: Arc<Texture>,
+        rotation: f32,
     },
     Sdf {
         screen_position: ScreenPosition,
@@ -223,6 +224,7 @@ pub enum InterfaceRectangleInstruction {
         corner_diameter: CornerDiameter,
         texture: Arc<Texture>,
         smooth: bool,
+        rotation: f32,
     },
     Sdf {
         screen_position: ScreenPosition,
