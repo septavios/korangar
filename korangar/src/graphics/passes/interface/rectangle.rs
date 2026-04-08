@@ -286,16 +286,16 @@ impl Prepare for InterfaceRectangleDrawer {
                             color: color.components_linear(),
                             corner_diameter: (*corner_diameter).into(),
                             screen_clip: (*screen_clip).into(),
-                            shadow_color: (*shadow_color).into(),
-                            shadow_padding: shadow_padding.components(),
+                            shadow_color: shadow_color.components_linear(),
+                            shadow_padding: (*shadow_padding).into(),
                             screen_position: (*screen_position).into(),
                             screen_size: (*screen_size).into(),
                             texture_position: [0.0, 0.0],
-                            texture_size: [1.0, 1.0],
+                            texture_size: [0.0, 0.0],
                             rectangle_type: 0,
                             texture_index: 0,
                             rotation: 0.0,
-                            padding: Default::default(),
+                            padding: 0.0,
                         });
                     }
                     InterfaceRectangleInstruction::Sprite {
@@ -334,7 +334,7 @@ impl Prepare for InterfaceRectangleDrawer {
                             rectangle_type,
                             texture_index,
                             rotation: *rotation,
-                            padding: Default::default(),
+                            padding: 0.0,
                         });
                     }
                     InterfaceRectangleInstruction::Sdf {
@@ -370,7 +370,7 @@ impl Prepare for InterfaceRectangleDrawer {
                             rectangle_type: 3,
                             texture_index,
                             rotation: *rotation,
-                            padding: Default::default(),
+                            padding: 0.0,
                         });
                     }
                     InterfaceRectangleInstruction::Text {
@@ -394,7 +394,7 @@ impl Prepare for InterfaceRectangleDrawer {
                             rectangle_type: 4,
                             texture_index: 0,
                             rotation: 0.0,
-                            padding: Default::default(),
+                            padding: 0.0,
                         });
                     }
                 }
@@ -428,8 +428,8 @@ impl Prepare for InterfaceRectangleDrawer {
                             color: color.components_linear(),
                             corner_diameter: (*corner_diameter).into(),
                             screen_clip: (*screen_clip).into(),
-                            shadow_color: (*shadow_color).into(),
-                            shadow_padding: shadow_padding.components(),
+                            shadow_color: shadow_color.components_linear(),
+                            shadow_padding: (*shadow_padding).into(),
                             screen_position: (*screen_position).into(),
                             screen_size: (*screen_size).into(),
                             texture_position: [0.0, 0.0],
@@ -437,7 +437,7 @@ impl Prepare for InterfaceRectangleDrawer {
                             rectangle_type: 0,
                             texture_index: 0,
                             rotation: 0.0,
-                            padding: Default::default(),
+                            padding: 0.0,
                         });
                     }
 
@@ -466,7 +466,7 @@ impl Prepare for InterfaceRectangleDrawer {
                             rectangle_type,
                             texture_index: 0,
                             rotation: *rotation,
-                            padding: Default::default(),
+                            padding: 0.0,
                         });
                     }
                     InterfaceRectangleInstruction::Sdf {
@@ -491,7 +491,7 @@ impl Prepare for InterfaceRectangleDrawer {
                             rectangle_type: 3,
                             texture_index: 0,
                             rotation: *rotation,
-                            padding: Default::default(),
+                            padding: 0.0,
                         });
                     }
                     InterfaceRectangleInstruction::Text {
@@ -515,7 +515,7 @@ impl Prepare for InterfaceRectangleDrawer {
                             rectangle_type: 4,
                             texture_index: 0,
                             rotation: 0.0,
-                            padding: Default::default(),
+                            padding: 0.0,
                         });
                     }
                 }

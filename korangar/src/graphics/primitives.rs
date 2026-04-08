@@ -378,6 +378,12 @@ impl korangar_interface::application::ShadowPadding for ShadowPadding {
     }
 }
 
+impl From<ShadowPadding> for [f32; 4] {
+    fn from(val: ShadowPadding) -> Self {
+        [val.left, val.right, val.top, val.bottom]
+    }
+}
+
 #[derive(Debug, Clone, Copy, Default, PartialEq, Serialize, Deserialize)]
 pub struct CornerDiameter {
     pub top_left: f32,

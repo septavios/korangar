@@ -41,6 +41,10 @@ func fs_main(input: PostprocessingVertexOutput) -> float4 {
     var color = instance.color;
 
     switch (instance.rectangle_type) {
+        case 0: {
+            // Solid color
+            break;
+        }
         case 1: {
             // Sprite (linear filtering)
             color *= textures[instance.texture_index].Sample(linear_sampler, input.texture_coordinates);

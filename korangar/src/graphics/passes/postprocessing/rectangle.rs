@@ -318,7 +318,7 @@ impl Prepare for PostProcessingRectangleDrawer {
                                 texture_position: [0.0; 2],
                                 texture_size: [0.0; 2],
                                 rectangle_type: 0,
-                                texture_index: -1,
+                                texture_index: 0,
                                 rotation: 0.0,
                                 padding: Default::default(),
                             });
@@ -404,7 +404,7 @@ impl Prepare for PostProcessingRectangleDrawer {
                                 texture_position: (*texture_position).into(),
                                 texture_size: (*texture_size).into(),
                                 rectangle_type: 4,
-                                texture_index: -1,
+                                texture_index: 0,
                                 rotation: 0.0,
                                 padding: Default::default(),
                             });
